@@ -1,18 +1,8 @@
 ---
 layout: page
-title: About
+title: Who is zangobot?
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+My name is **Luca Demetrio**, PhD student at <span style="color: blue">[DIBRIS - University of Genova](https://www.dibris.unige.it/)</span> and amateur  <span style="color: blue">[Tap Dance](https://en.wikipedia.org/wiki/Tap_dance)</span> &  <span style="color: blue">[Hip Hop dancer](https://en.wikipedia.org/wiki/Hip_hop)</span>.
+I feel deeply chained to science and art, leading my mind to perceive the world in an unusual way.
