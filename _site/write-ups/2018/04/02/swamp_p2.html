@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      Happy Swamp CTF -> Orb2 &middot; Bytes and Tempo
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+</head>
+
+
+  <body class="post">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        Bytes and Tempo
+      </a>
+    </div>
+    <p class="lead">What's the difference between a dancer and a computer scientists?</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+  
+
+  
+
+  
+
+
+  
+
+  
+    
+      <a class="page-link "
+          href="/">About</a>
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/posts.html">Write-ups</a>
+    
+  
+
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+  
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+  <p>
+  &copy; 2018.
+  <a href="/LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class="container">
+      <header>
+  <h1 class="post-title">Happy Swamp CTF -> Orb2</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">02 Apr 2018</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        <a href="/category/posts.html">
+          Write-ups
+        </a>
+      
+    
+  </span>
+</div>
+
+  <div class="post-body">
+    <!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<p>I tried to solve different tasks, but I was not so successful.
+This write-up is complete from the point of view of the solution… but I didn’t managed to get the flag.</p>
+
+<p><strong>So why am I posting it?</strong></p>
+
+<p>Because I think this is worth sharing. Be patient and keep reading ;-)</p>
+
+<h1 id="the-task">The task</h1>
+<p>The challenge is accessible via a zip folder. The password of that zip is the flag
+of a previous challenge. The main contents of the folder are the following files:</p>
+<ul>
+  <li>a lore for the challenge;</li>
+  <li><code class="highlighter-rouge">examples.p</code>: a pickle file containing, for each row a tuple of five floats and a couple of int;</li>
+  <li><code class="highlighter-rouge">page_of_numbers.p</code>: a pickle file containing, for each row a tuple of five floats.</li>
+</ul>
+
+<p>Mmmh. What the hell?
+Let’s read the lore. Be careful in reading this… <em>because this lore matters</em>.
+You’ll understand why at the bottom of this write-up.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The acolytes of several monasteries have been studying possible origins of this attack for weeks.  
+One of the most ancient and forbidden tomes contained in the great libraries talks about the origin of the purple dragon guard.  
+It appears that in ancient times, long before spellscourge, they were formidable gate keepers of Cormyr to other planes.  
+The most renowned branch of them fought back the great black dragon Thauglorimorgorus who was so ancient his scales turned purple.  
+They ended up chasing it into the Vast Swamp and founded an encampment called The Swamp Fort of Cormyr.
+In this fort was a portal to the shadow plane to where they had chased Thauglor.  
+Those who entered never returned.  It appeared Thauglor had never been pushed back but all along was luring the militia to slaughter.  
+In another expedition through the portal, desperate times forced a cleric to ask a miracle of Selûne.  
+Our lady of silver had always been at odds with her twin, Shar, the mistress of night goddess of the plane of shadow.  
+The call was answered and a counterpart of this fort sprang into being with a pillar of light which extinguished the magical darkness
+for miles all around.  
+Thauglor was repelled by this brilliant light.
+This lead to many victories in this plane.  The guard resided here with the cleric at its head named The Lord of Light.  
+She thus forward sat on the crystal throne and lead the guardians of this shining citadel known to all as The Ever Shining Army.
+This appears to be solely a legend since the only known encampment in the Vast Swamp is known as the Lost Refuge
+and is rumored to house those of Church of Shar, disciples of the shadow weave.  
+They are nothing like those known in that legend.  
+It is however known that there is a fortress on the other side ruled by the Dusk Lord known as the Shadow Citadel which is situated
+on the edge of the Shadow Swamp.  
+The mountains there are treacherous and the toxic rivers which run through the valleys sometimes lead historians to call it The Vale of Shadows.
+One cleric has spent time divining a spell which determined that those pages of numbers previously found are trajectories
+of the format &lt;x position, y position, speed, angle above the horizontal, direction from the firing position&gt;.  
+It appears to be that there is a spell being cast using the shadow weave and the coordinates seem to indicate
+that the spells location is in the kingdom of Cormyr.
+</code></pre></div></div>
+
+<p>Basically, each tuple corresponds to a bullet! I have a (x,y) position, the speed of shooting,
+the angle above the horizontal and direction from shooting position.
+It’s simple 3D physics: I need to calculate the trajectory of the bullet and it’s impact point.</p>
+
+<p><strong>SPOILER</strong>: I was given a little aid by my dear brother <a href="https://andreajens.gamejolt.io/">Andrea</a> (which is a Physicist).
+I learnt something new while reasoning with him. I’m not talking about calculus, formulae or physics laws, but lateral thinking in genaral.
+Having said that, let’s do some algebra.</p>
+
+<h1 id="the-physics-behind-this-challenge">The physics behind this challenge</h1>
+<p>I’m going to refer to <script type="math/tex">(x,y)</script> for the position, <script type="math/tex">v</script> for speed, <script type="math/tex">\theta</script> for angle above the horizontal and <script type="math/tex">\gamma</script> for the direction.
+First of all, I need to understand how much time the bullet needs to fall to the ground again.
+I can state that:</p>
+<center>
+$$
+v_z = vz0 - |g|t
+$$
+</center>
+<p><br />
+When it will reach the ground? On the vertex of the parabule, <script type="math/tex">v_z</script> is zero, then <script type="math/tex">v_z</script> must be
+the opposite of <script type="math/tex">v_{z0}</script> when it will touch the ground:</p>
+<center>
+$$
+v_z = -v_{z0} \\
+-v_{z0} = v_{z0} - |g|t\\
+t = \frac{2v_{z0}}{|g|}
+$$
+</center>
+<p>I have now <strong>when the bullet impacts the xy plane</strong>. <script type="math/tex">v_{z0}</script> is the projection of <script type="math/tex">v</script> on the z axis.
+This time I need the direction angle <script type="math/tex">\gamma</script>:</p>
+<center>
+$$
+v_{z0} = vsin(\theta)
+$$
+</center>
+<p>It’s time to calculate how long the bullet will travel on x and y.</p>
+
+<p><img src="/assets/2018-04-02-swamp_p2/3dplane.jpg" alt="This is our settings" title="This is our settings" /></p>
+
+<p>I need to decompose the speed, projecting it on the <script type="math/tex">xz</script> and <script type="math/tex">yz</script> plane:</p>
+<center>
+$$
+v_x = vcos(\theta)cos(\gamma)\\
+v_y = vcos(\theta)sin(\gamma)\\
+$$
+</center>
+<p>Now that I have the projections of the speed, I can calculate the impact position.
+I am going to use again the impact time calculated before:</p>
+<center>
+$$
+x_f = x + v_x * t \\
+y_f = y + v_y * t
+$$
+</center>
+
+<h1 id="its-time-to-fail">It’s time to Fail</h1>
+<p>Even tough the model is correct, I couldn’t match the results of <code class="highlighter-rouge">examples.p</code> file.
+The model calculates the trajectory of a bullet from a point <script type="math/tex">(x,y)</script> in space to <script type="math/tex">(x_f, y_f)</script>.</p>
+
+<h2 id="in-fact-it-was-the-contrary">IN FACT IT WAS THE CONTRARY.</h2>
+
+<p>It is written <em>clearly</em> in the lore:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;... direction from the firing position&gt;
+</code></pre></div></div>
+<p>So, the <script type="math/tex">(x,y)</script> couple is an impact point, not a shooting point.
+Signs need to be flipped here:</p>
+<center>
+$$
+x_f = x - v_x * t \\
+y_f = y - v_y * t
+$$
+</center>
+<p>… leading to this flag.<br />
+<img src="/assets/2018-04-02-swamp_p2/flag.jpg" alt="This is the flag" title="This is the flag" />
+We didn’t managed to capture the flag but we were so damn close. We had fun, that was the most important thing.</p>
+
+<p>See you next write-up ;)</p>
+
+    
+
+
+
+<div class="post-tags">
+  
+</div>
+  </div>
+
+  
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/write-ups/2018/04/01/swamp_pt1.html">
+            Happy Swamp CTF -> Journey
+            <small>01 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
