@@ -24,7 +24,7 @@ github_username:  zangobot
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hydeout #jekyll-swiss
+theme: jekyll-theme-hydeout
 
 
 # Exclude from processing.
