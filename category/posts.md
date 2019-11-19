@@ -1,8 +1,6 @@
 ---
 layout: category
-title: Write-ups
+title: Blog
 ---
 
-Here you can find all the write-ups I am going to produce.
-
-**Enjoy! ^_^**
+Sometimes I have this urge of writing down my experiences: this is my personal blog!

@@ -3,10 +3,10 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title: Bytes and Tempo
+title: Zangobot
 email: zangobot@zenhack.team
 description: >- # this means to ignore newlines until "baseurl:"
- What's the difference between a dancer and a computer scientists?
+ AI pwner, dancer and dreamer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: zangobot
