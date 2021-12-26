@@ -1,32 +1,12 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
-
-# Setup
 title: Luca Demetrio
-email: zangobot@zenhack.team
-description: >- # this means to ignore newlines until "baseurl:"
- PostDoc @ PraLab, AI pwner, dancer and dreamer
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: zangobot
-github_username:  zangobot
-
-
-paginate:         5
-# paginate_path:    '/page:num'
-                    # Or '/blog/page:num' if you want to move your index pages
-
-plugins:
-  # - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-
-# Custom vars
-
-sidebar_home_link:  true
-# sidebar_blog_link:  '/blog'   # By default, your home page is your blog
-                                # page. If you change your paginate_path,
-                                # set this to the root of the paginate_path
-                                # to enable a separate blog link.
-github: https://github.com/zangobot
+logo: /assets/img/blog_pic.jpeg
+description: Researcher, computer scientist, dancer, creator, and much more!
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-minimal
+social_badges : true
+github : {owner_url : https://github.com/zangobot, logo : /assets/img/github-120.png}
+twitter: {owner_url : https://twitter.com/zangobot, logo : /assets/img/twitter.png}
+scholar: {owner_url : https://scholar.google.com/citations?user=1VFfrQEAAAAJ&hl=it, logo : /assets/img/scholar.png}
+instagram: {owner_url : https://www.instagram.com/wire.luca, logo : /assets/img/instagram.png}
+linkedin: {owner_url : https://www.linkedin.com/in/luca-demetrio/, logo : /assets/img/linkedin.png}
