@@ -3,5 +3,5 @@
 source "https://rubygems.org"
 
 gemspec
-gem "github-pages", "~> 219", group: :jekyll_plugins
+gem "kramdown-parser-gfm"
 gem "webrick", "~> 1.7"
