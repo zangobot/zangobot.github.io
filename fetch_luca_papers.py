@@ -15,6 +15,7 @@ The output is a plain JSON array that can easily be consumed by other tools.
 """
 
 import json
+import html
 from pathlib import Path
 
 import findpapers
@@ -58,18 +59,22 @@ lines = ["# Publications by year", ""]
 for year in sorted({p["year"] for p in papers}, reverse=True):
     lines.append(f"## {year}")
     for p in [x for x in papers if x["year"] == year]:
-        title = p.get("title", "")
+        title = html.unescape(p.get("title", ""))
         url = p.get("link", "#")
         authors = ", ".join(p.get("authors", []))
-        venue = p.get("venue", "")
-        abstract = p.get("abstract", "") or "(No abstract)"
-        lines.append(f"**[{title}]({url})**\n")
-        lines.append(f"  *Authors:* {authors}\n")
-        lines.append(f"  *Published on:* {venue}\n")
+        venue = html.unescape(p.get("venue", ""))
+        abstract_raw = p.get("abstract", "") or "(No abstract)"
+        abstract_md = html.unescape(abstract_raw).replace("\n", "<br>")
+        lines.append(f"**[{title}]({url})**")
+        lines.append(f"  *Authors:* {authors}")
+        lines.append(f"  *Published on:* {venue}")
+        # Tags will be in a separate dropdown – handled below
         lines.append("  <details>")
         lines.append("    <summary>Abstract</summary>")
-        lines.append(f"\n{abstract}\n")
-        lines.append("  </details>\n")
+        lines.append(f"\n{abstract_md}\n")
+        lines.append("  </details>")
+        # blank line after abstract
+        lines.append("<br>")
     lines.append("")
 
 header = """---
