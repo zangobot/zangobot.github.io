@@ -79,5 +79,30 @@ title: My Journey
 
 ### 2019
 - Giacomo Benedetti, *Application of Adversarial Machine Learning to Malware Detection*, B.Sc. in Computer Science, supervised by Prof. Giovanni Lagorio
+- "Explaining Vulnerability of Deep Learning to Adversarial Windows Malware", Italian Conference on Cyber‑Security (ITASEC), Italia
 
-## Special Mentions
+## Public Presentations
+
+### 2025
+- *Pick Two: Robustness, Accuracy, Real Correlations in Malware Detection with AI*, invited talk at 4th Workshop on Rethinking Malware Analysis (WoRMA)
+- *Malware Detection with AI Systems: bridging the gap between industry and academia*, invited talk at 4th International Workshop on Designing and Measuring Security in Systems with AI (DEMESSI)
+
+### 2024
+- *Pentesting Windows Malware Detectors with Adversarial EXEmples*. Invited by the research group "INRIA PIRAT" within the workshop "DefMal", Rennes (FR)
+
+### 2023
+- *Adversarial EXEmples: Functionality‑preserving Optimization of Adversarial Windows Malware*. Invited by the research group "INRIA PIRAT" to the cycle of online seminars organized by them
+- *GPT‑like Pre‑Training on Unlabeled System Logs for Malware Detection* [TROOPERS DE](https://troopers.de/troopers23/talks/mv8sds/)
+
+### 2021
+- *Adversarial EXEmples: Functionality‑preserving Optimization of Adversarial Windows Malware*, Machine Learning and Data Mining (MLDM), AIxIA Workshop
+- *Adversarial EXEmples: Functionality‑preserving Optimization of Adversarial Windows Malware*, 1st Huawei Innovation Workshop on Artificial Intelligence for Cyber‑Security, Huawei AI4Sec, online
+- *Adversarial EXEmples: Functionality‑preserving Optimization of Adversarial Windows Malware*, Alan Turing Institute seminar series, [online](https://www.youtube.com/watch?v=CTzNID5iLcw)
+- *Formalizing evasion attacks against machine learning Windows malware detectors*, Ciclo di seminari organizzato dal S3AI Group, [online](https://www.s3ai.at/open-research-clubs-2021.html)
+
+### 2020
+- *Efficient black‑box optimization of adversarial windows malware with constrained manipulations*, Avast CyberSec&AI, [online](https://blog.avast.com/cybersecai-connected-recap-avast)
+- *WAF‑A‑MoLE: Evading Web Application Firewalls through Adversarial Machine Learning*, Symposium of Applied Computing (SAC), online
+
+### 2019
+- *Explaining Vulnerability of Deep Learning to Adversarial Windows Malware*, Italian Conference on Cyber‑Security (ITASEC), Italy

@@ -67,11 +67,11 @@ for year in sorted({p["year"] for p in papers}, reverse=True):
 header = """---
 layout: default
 title: Science Publications
+---
+# Publications
 
-# Publications by year
-
-<div style=\"margin-bottom:1rem;\">
-  <input type=\"text\" id=\"pub-search\" placeholder=\"Search publications...\">
+<div style="margin-bottom:1rem;">
+  <input type="text" id="pub-search" placeholder="Search publications...">
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -87,21 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const wrapper = document.createElement('div');
       wrapper.className = 'publication';
 
+      // Find the <br> that separates this publication from the next
       let end = paragraph.nextElementSibling;
       while (end && end.tagName !== 'BR') {
         end = end.nextElementSibling;
       }
 
+      // Move all nodes from paragraph up to (but not including) the <br> into wrapper
       const grandParent = paragraph.parentNode;
       grandParent.insertBefore(wrapper, paragraph);
       let node = paragraph;
       while (node && node !== end) {
-        const next = node.nextSibling;
+        const next = node.nextSibling; // include text nodes
         wrapper.appendChild(node);
         node = next;
       }
 
-      wrapper.dataset.text = wrapper.textContent.toLowerCase();
+      // Store searchable text (title, authors, venue)
+      wrapper.dataset.text = link.textContent.toLowerCase();
     });
   }
 
