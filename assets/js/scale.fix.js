@@ -25,17 +25,11 @@
         document.addEventListener("touchstart", gestureStart, false);
         document.addEventListener("touchend", gestureEnd, false);
 
-        // --- start: shrink logo on scroll (mobile) ---
+        // --- start: reduce logo size on mobile ---
         var headerImg = document.querySelector('header img');
         if (headerImg) {
-            headerImg.style.transition = 'transform 0.2s ease-out';
-            window.addEventListener('scroll', function() {
-                var y = window.scrollY;
-                // Scale down to minimum 0.5 when scrolled 300px
-                var scale = Math.max(0.5, 1 - y / 300);
-                headerImg.style.transform = 'scale(' + scale + ')';
-            });
+            headerImg.style.maxWidth = '50%';
         }
-        // --- end: shrink logo on scroll (mobile) ---
+        // --- end: reduce logo size on mobile ---
     }
 })(document);
