@@ -2,7 +2,7 @@
 layout: default
 title: Science Publications
 ---
-# Publications by year
+# Publications
 
 <div style="margin-bottom:1rem;">
   <input type="text" id="pub-search" placeholder="Search publications...">
