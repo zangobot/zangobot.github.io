@@ -4,6 +4,55 @@ title: Science Publications
 ---
 # Publications by year
 
+<div style="margin-bottom:1rem;">
+  <input type="text" id="pub-search" placeholder="Search publications...">
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('pub-search');
+  function build() {
+    const links = document.querySelectorAll('strong a');
+    links.forEach(link => {
+      const strong = link.closest('strong');
+      if (!strong) return;
+      const paragraph = strong.parentNode; // <p>
+      if (paragraph.classList.contains('publication')) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'publication';
+
+      // Find the <br> that separates this publication from the next
+      let end = paragraph.nextElementSibling;
+      while (end && end.tagName !== 'BR') {
+        end = end.nextElementSibling;
+      }
+
+      // Move all nodes from paragraph up to (but not including) the <br> into wrapper
+      const grandParent = paragraph.parentNode;
+      grandParent.insertBefore(wrapper, paragraph);
+      let node = paragraph;
+      while (node && node !== end) {
+        const next = node.nextSibling; // include text nodes
+        wrapper.appendChild(node);
+        node = next;
+      }
+
+      // Store searchable text (title, authors, venue)
+      wrapper.dataset.text = link.textContent.toLowerCase();
+    });
+  }
+
+  build();
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    document.querySelectorAll('.publication').forEach(pub => {
+      pub.style.display = pub.dataset.text.includes(q) ? '' : 'none';
+    });
+  });
+});
+</script>
+
 ## 2026
 **[Windows Malware Detector as a Compound AI System: Trade-Offs in Accuracy, Efficiency, and Adversarial Robustness](https://arxiv.org/abs/2609.08394)**
   *Authors:* Andrea Ponte, Luca Demetrio, Luca Oneto, Battista Biggio, Fabio Roli
