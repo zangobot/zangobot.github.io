@@ -19,7 +19,7 @@
 
 
 
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
         initialize();
 
         document.addEventListener("touchstart", gestureStart, false);
